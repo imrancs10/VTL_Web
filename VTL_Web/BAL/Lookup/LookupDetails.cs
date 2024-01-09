@@ -13,7 +13,7 @@ namespace VTL_Web.BAL.Lookup
 {
     public class LookupDetails
     {
-        upprbDbEntities _db = null;
+        vtlDbEntities _db = null;
 
         enum LookupEnum
         {
@@ -21,7 +21,7 @@ namespace VTL_Web.BAL.Lookup
         }
         //public List<MasterLookup> GetLookupDetail()
         //{
-        //    _db = new upprbDbEntities();
+        //    _db = new vtlDbEntities();
         //    return _db.MasterLookups.ToList();
         //}
     }

@@ -12,7 +12,7 @@ namespace VTL_Web.BAL.Login
 {
     public class LoginDetails
     {
-        upprbDbEntities _db = null;
+        vtlDbEntities _db = null;
 
         /// <summary>
         /// Get Authenticate User credentials
@@ -23,7 +23,7 @@ namespace VTL_Web.BAL.Login
         public Enums.LoginMessage GetLogin(string UserName, string Password)
         {
             string _passwordHash = Utility.GetHashString(Password);
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
 
             var _userLogin = _db.AdminUsers.Where(x => x.UserName.Equals(UserName) && x.Password.Equals(Password) && x.IsActive == true).FirstOrDefault();
 
@@ -48,7 +48,7 @@ namespace VTL_Web.BAL.Login
 
         public Enums.LoginMessage ValidateOTP(string UserName, string OTP)
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             var _userLogin = _db.AdminUsers.Where(x => x.UserName.Equals(UserName) && x.otp_number == OTP).FirstOrDefault();
 
             if (_userLogin != null)
@@ -60,7 +60,7 @@ namespace VTL_Web.BAL.Login
         }
         public Enums.LoginMessage ValidatePACLoginOTP(string UserName, string OTP)
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             var _userLogin = _db.PACUsers.Where(x => x.UserName.Equals(UserName) && x.otp_number == OTP).FirstOrDefault();
 
             if (_userLogin != null)
@@ -72,7 +72,7 @@ namespace VTL_Web.BAL.Login
         }
         public Enums.LoginMessage PACLogin(string UserName, string Password)
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
 
             var _userLogin = _db.PACUsers.Where(x => x.UserName.Equals(UserName) && x.Password.Equals(Password) && x.IsActive == true).FirstOrDefault();
 
@@ -96,7 +96,7 @@ namespace VTL_Web.BAL.Login
 
         public bool InsertLoginDetail()
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             var login = new LoginDetail()
             {
                 IsLogin = true,
@@ -109,7 +109,7 @@ namespace VTL_Web.BAL.Login
         }
         public bool UpdateLoginDetail()
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             var _userLogin = _db.LoginDetails.Where(x => x.UserId == UserData.UserId && x.IsLogin == true).ToList();
             foreach (var login in _userLogin)
             {
@@ -121,7 +121,7 @@ namespace VTL_Web.BAL.Login
         }
         public bool UpdateLoginDetailWithOTP(string username, string otpNumber)
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             var _userLogin = _db.AdminUsers.Where(x => x.UserName == username).FirstOrDefault();
             _userLogin.otp_number = otpNumber;
             _db.SaveChanges();
@@ -129,7 +129,7 @@ namespace VTL_Web.BAL.Login
         }
         public bool UpdatePACLoginDetailWithOTP(string username, string otpNumber)
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             var _userLogin = _db.PACUsers.Where(x => x.UserName == username).FirstOrDefault();
             _userLogin.otp_number = otpNumber;
             _db.SaveChanges();
@@ -137,7 +137,7 @@ namespace VTL_Web.BAL.Login
         }
         public bool? ValidateLoginDetail()
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             var _userLogin = _db.LoginDetails.Where(x => x.UserId == UserData.UserId).OrderByDescending(x => x.LoginAt).FirstOrDefault();
             return _userLogin?.IsLogin;
         }

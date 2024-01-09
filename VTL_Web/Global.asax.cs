@@ -70,7 +70,7 @@ namespace VTL_Web
                 Response.Cookies["ASP.NET_SessionId"].Secure = true;
             }
             //Application.Lock();
-            //upprbDbEntities _db = new upprbDbEntities();
+            //vtlDbEntities _db = new vtlDbEntities();
             //var totalUser = _db.Visitor_Detail.Count();
             ////GroupBy(x => new { x.Client_IP_Address, x.Device_Type }).Count();
             //Application["Totaluser"] = totalUser + 1;

@@ -300,7 +300,7 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="upprbDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="upprbDbEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="vtlDbEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Lookups" EntityType="upprbDbModel.Lookup" />
           <EntitySet Name="PACUsers" EntityType="upprbDbModel.PACUser" />
           <EntitySet Name="Enquiries" EntityType="upprbDbModel.Enquiry" />
@@ -596,7 +596,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="upprbDbModelStoreContainer" CdmEntityContainer="upprbDbEntities">
+        <EntityContainerMapping StorageEntityContainer="upprbDbModelStoreContainer" CdmEntityContainer="vtlDbEntities">
           <EntitySetMapping Name="Lookups">
             <EntityTypeMapping TypeName="upprbDbModel.Lookup">
               <MappingFragment StoreEntitySet="Lookup">

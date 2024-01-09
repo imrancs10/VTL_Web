@@ -13,10 +13,10 @@ namespace DataLayer
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class upprbDbEntities : DbContext
+    public partial class vtlDbEntities : DbContext
     {
-        public upprbDbEntities()
-            : base("name=upprbDbEntities")
+        public vtlDbEntities()
+            : base("name=vtlDbEntities")
         {
         }
     

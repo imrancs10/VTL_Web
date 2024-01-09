@@ -19,10 +19,10 @@ namespace VTL_Web.BAL.Masters
 {
     public class GeneralDetails
     {
-        upprbDbEntities _db = null;
+        vtlDbEntities _db = null;
         public List<string> GetUserPermission(int roleId)
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             var superAdminRoleName = _db.Roles.Where(x => x.RoleId == roleId).Select(x => x.RoleName).FirstOrDefault();
             var _list = (from permission in _db.Permissions
                          join userRole in _db.UserRoles on permission.PermissionId equals userRole.PermissionId into userRole1
@@ -35,7 +35,7 @@ namespace VTL_Web.BAL.Masters
         }
         public IEnumerable<object> GetUserRole()
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             return (from role in _db.Roles
                     select new
                     {
@@ -45,7 +45,7 @@ namespace VTL_Web.BAL.Masters
         }
         public List<NoticeModel> GetEntryType()
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             var _list = (from lookEntry in _db.Lookups
                          where lookEntry.LookupType == "UploadType" && lookEntry.IsActive == true
                          select new NoticeModel
@@ -58,7 +58,7 @@ namespace VTL_Web.BAL.Masters
         }
         public List<NoticeModel> GetNoticeDetail(int? noticeTypeId = null, int? categoryId = null, int? entryTypeId = null, int? noticeId = null)
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             var _list = (from not in _db.Notices
                          join lookEntry in _db.Lookups on not.EntryTypeId equals lookEntry.LookupId into lookEntry1
                          from lookEntry2 in lookEntry1.DefaultIfEmpty()
@@ -92,7 +92,7 @@ namespace VTL_Web.BAL.Masters
         }
         public List<NoticeModel> GetLatestEventDetail()
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             var currentDate = DateTime.Now;
             var thresoldDate = currentDate.AddMonths(-1);
             var _list = (from not in _db.Notices
@@ -118,7 +118,7 @@ namespace VTL_Web.BAL.Masters
         }
         public NoticeModel GetHighlightedNoticeDetail()
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             var currentDate = DateTime.Now;
             var thresoldDate = currentDate.AddMonths(-1);
             var _list = (from not in _db.Notices
@@ -145,7 +145,7 @@ namespace VTL_Web.BAL.Masters
 
         public List<PopularRecruitmentModel> GetPopularRecruitmentDetail()
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             var _list = (from not in _db.PopularRecruitments
                          select new PopularRecruitmentModel
                          {
@@ -165,7 +165,7 @@ namespace VTL_Web.BAL.Masters
 
         public List<NoticeTypeModel> GetNoticeHirarchyDetail()
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             var _list = (from not in _db.Lookups
                          join parent in _db.Lookups on not.ParentLookupId equals parent.LookupId
                          where not.IsActive == true && not.LookupType == "NoticeType" && parent.LookupType == "UploadType" && parent.LookupName == "Notice"
@@ -188,7 +188,7 @@ namespace VTL_Web.BAL.Masters
 
         public List<NoticeTypeModel> GetCourtHirarchyDetail()
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             var _list = (from not in _db.Lookups
                          join parent in _db.Lookups on not.ParentLookupId equals parent.LookupId
                          where not.IsActive == true && not.LookupType == "NoticeType" && parent.LookupType == "UploadType" && parent.LookupName == "Court"
@@ -211,7 +211,7 @@ namespace VTL_Web.BAL.Masters
 
         public List<NoticeTypeModel> GetRecruitmentRuleNoticeHirarchyDetail()
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             var _list = (from not in _db.Lookups
                          join parent in _db.Lookups on not.ParentLookupId equals parent.LookupId
                          where not.IsActive == true && not.LookupType == "NoticeType" && parent.LookupType == "UploadType" && parent.LookupName == "RecruitmentRules"
@@ -234,7 +234,7 @@ namespace VTL_Web.BAL.Masters
 
         public List<NoticeTypeModel> GetGONoticeHirarchyDetail()
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             var _list = (from not in _db.Lookups
                          join parent in _db.Lookups on not.ParentLookupId equals parent.LookupId
                          where not.IsActive == true && not.LookupType == "NoticeType" && parent.LookupType == "UploadType" && parent.LookupName == "GO"
@@ -247,7 +247,7 @@ namespace VTL_Web.BAL.Masters
         }
         public List<NoticeTypeModel> GetSyllabusHirarchyDetail()
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             var _list = (from not in _db.Lookups
                          join parent in _db.Lookups on not.ParentLookupId equals parent.LookupId
                          where not.IsActive == true && not.LookupType == "NoticeType" && parent.LookupType == "UploadType" && parent.LookupName == "Syllabus"
@@ -261,7 +261,7 @@ namespace VTL_Web.BAL.Masters
 
         public List<NoticeTypeModel> GetPhotoGalaryNoticeHirarchyDetail()
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             var _list = (from not in _db.Lookups
                          join parent in _db.Lookups on not.ParentLookupId equals parent.LookupId
                          where not.IsActive == true && not.LookupType == "NoticeType" && parent.LookupType == "UploadType" && parent.LookupName == "PhotoGalary"
@@ -275,7 +275,7 @@ namespace VTL_Web.BAL.Masters
 
         public bool DeleteNotice(int Id)
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             var result = _db.Notices.FirstOrDefault(x => x.Id == Id);
             _db.Notices.Remove(result);
             _db.SaveChanges();
@@ -284,7 +284,7 @@ namespace VTL_Web.BAL.Masters
 
         public List<EnquiryModel> GetAllEnquiry()
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             var _list = (from en in _db.Enquiries
                          select new EnquiryModel
                          {
@@ -301,7 +301,7 @@ namespace VTL_Web.BAL.Masters
         }
         public EnquiryModel GetEnquiryById(int Id)
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             var _list = (from en in _db.Enquiries
                          where en.Id == Id
                          select new EnquiryModel
@@ -320,7 +320,7 @@ namespace VTL_Web.BAL.Masters
 
         public List<FeedbackModel> GetAllFeedback()
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             var _list = (from en in _db.Feedbacks
                          select new FeedbackModel
                          {
@@ -338,7 +338,7 @@ namespace VTL_Web.BAL.Masters
 
         public Enums.CrudStatus SaveEnquiry(Enquiry enquiry)
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             _db.Entry(enquiry).State = EntityState.Added;
             int _effectRow = _db.SaveChanges();
             return _effectRow > 0 ? Enums.CrudStatus.Saved : Enums.CrudStatus.NotSaved;
@@ -346,14 +346,14 @@ namespace VTL_Web.BAL.Masters
 
         public Enums.CrudStatus SaveFeedback(Feedback feedback)
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             _db.Entry(feedback).State = EntityState.Added;
             int _effectRow = _db.SaveChanges();
             return _effectRow > 0 ? Enums.CrudStatus.Saved : Enums.CrudStatus.NotSaved;
         }
         public List<PACEntryModel> GetAllPACDetail(int? Id = null)
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             var _list = (from pac in _db.PACEntries
                          join state in _db.StateMasters on pac.State_Id equals state.StateId into state1
                          from state2 in state1.DefaultIfEmpty()
@@ -413,7 +413,7 @@ namespace VTL_Web.BAL.Masters
             DateTime? dateFrom = !string.IsNullOrEmpty(FIRDateFrom) ? (DateTime?)Convert.ToDateTime(FIRDateFrom) : null;
             DateTime? dateTo = !string.IsNullOrEmpty(FIRDateTo) ? (DateTime?)Convert.ToDateTime(FIRDateTo) : null;
             int? centerStatusId = !string.IsNullOrEmpty(CenterStatus) && CenterStatus != "null" ? (int?)Convert.ToInt32(CenterStatus) : null;
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             var _list = (from pac in _db.PACEntries
                          join state in _db.StateMasters on pac.State_Id equals state.StateId into state1
                          from state2 in state1.DefaultIfEmpty()
@@ -474,7 +474,7 @@ namespace VTL_Web.BAL.Masters
         }
         public Enums.CrudStatus DeleteNoticeEntry(int Id)
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             int _effectRow = 0;
             var _deptRow = _db.Notices.Where(x => x.Id.Equals(Id)).FirstOrDefault();
             if (_deptRow != null)
@@ -490,7 +490,7 @@ namespace VTL_Web.BAL.Masters
         }
         public List<PromotionModel> GetPromotionDetail(int? promotionId = null)
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             var _list = (from not in _db.PromotionDetails
                          join parent in _db.PromotionDetails on not.Parent_Id equals parent.Id into parentDetail
                          from parentDetail2 in parentDetail.DefaultIfEmpty()
@@ -510,7 +510,7 @@ namespace VTL_Web.BAL.Masters
         }
         public List<DirectRecruitmentModel> GetDirectRecruitmentDetail(int? drId = null)
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             var _list = (from not in _db.DirectRecruitementDetails
                          join parent in _db.DirectRecruitementDetails on not.Parent_Id equals parent.Id into parentDetail
                          from parentDetail2 in parentDetail.DefaultIfEmpty()
@@ -530,7 +530,7 @@ namespace VTL_Web.BAL.Masters
         }
         public List<PopularRecruitmentModel> GetPopularRecruitmentDetail(int? drId = null)
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             var _list = (from not in _db.PopularRecruitments
                          where ((drId == null) || (drId != null && not.Id == drId))
                          select new PopularRecruitmentModel
@@ -549,7 +549,7 @@ namespace VTL_Web.BAL.Masters
         }
         public List<PopularRecruitmentModel> GetAllPopularRecruitmentDetail()
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             var _list = (from not in _db.PopularRecruitments
                          where not.is_active == true
                          select new PopularRecruitmentModel
@@ -568,7 +568,7 @@ namespace VTL_Web.BAL.Masters
         }
         public IEnumerable<DirectRecruitmentModel> GetRecursiveDirectRecruitmentDetail()
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             List<DirectRecruitmentModel> hierarchy = new List<DirectRecruitmentModel>();
             var categories = (from not in _db.DirectRecruitementDetails
                               where (not.FileName == null || not.FileName == "") && (not.FIleURL == null || not.FIleURL == "")
@@ -587,7 +587,7 @@ namespace VTL_Web.BAL.Masters
         }
         public IEnumerable<PromotionModel> GetRecursivePromotionDetail()
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             List<PromotionModel> hierarchy = new List<PromotionModel>();
             var categories = (from not in _db.PromotionDetails
                               where (not.FileName == null || not.FileName == "") && (not.FIleURL == null || not.FIleURL == "")
@@ -638,7 +638,7 @@ namespace VTL_Web.BAL.Masters
 
         public Enums.CrudStatus DeletePACEntry(int Id)
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             int _effectRow = 0;
             var _deptRow = _db.PACEntries.Where(x => x.Id.Equals(Id)).FirstOrDefault();
             if (_deptRow != null)
@@ -656,7 +656,7 @@ namespace VTL_Web.BAL.Masters
 
         //public Enums.CrudStatus EditDept(string deptName, int deptId, string deptUrl,string  deptDesc)
         //{
-        //    _db = new upprbDbEntities();
+        //    _db = new vtlDbEntities();
         //    int _effectRow = 0;
         //    var _deptRow = _db.Departments.Where(x => x.DepartmentID.Equals(deptId)).FirstOrDefault();
         //    if (_deptRow != null)
@@ -673,7 +673,7 @@ namespace VTL_Web.BAL.Masters
         //}
         //public Enums.CrudStatus UpdateDeptImage(byte[] image, int deptId)
         //{
-        //    _db = new upprbDbEntities();
+        //    _db = new vtlDbEntities();
         //    int _effectRow = 0;
         //    var _deptRow = _db.Departments.Where(x => x.DepartmentID.Equals(deptId)).FirstOrDefault();
         //    if (_deptRow != null)
@@ -688,7 +688,7 @@ namespace VTL_Web.BAL.Masters
         //}
         //public Enums.CrudStatus DeleteDept(int deptId)
         //{
-        //    _db = new upprbDbEntities();
+        //    _db = new vtlDbEntities();
         //    int _effectRow = 0;
         //    var _deptRow = _db.Departments.Where(x => x.DepartmentID.Equals(deptId)).FirstOrDefault();
         //    if (_deptRow != null)
@@ -704,7 +704,7 @@ namespace VTL_Web.BAL.Masters
 
         //public List<DepartmentModel> DepartmentList()
         //{
-        //    _db = new upprbDbEntities();
+        //    _db = new vtlDbEntities();
         //    var _list = (from dept in _db.Departments
         //                 select new DepartmentModel
         //                 {
@@ -719,7 +719,7 @@ namespace VTL_Web.BAL.Masters
         //}
         //public List<MasterLookupModel> GetMastersData()
         //{
-        //    _db = new upprbDbEntities();
+        //    _db = new vtlDbEntities();
         //    var _list = (from dept in _db.MasterLookups
         //                 select new MasterLookupModel
         //                 {
@@ -732,7 +732,7 @@ namespace VTL_Web.BAL.Masters
 
         //public DepartmentModel GetDeparmentById(int deptId)
         //{
-        //    _db = new upprbDbEntities();
+        //    _db = new vtlDbEntities();
         //    int _effectRow = 0;
         //    var _deptRow = _db.Departments.Where(x => x.DepartmentID.Equals(deptId)).FirstOrDefault();
         //    if (_deptRow != null)
@@ -752,7 +752,7 @@ namespace VTL_Web.BAL.Masters
 
         //public Enums.CrudStatus SaveMasterLookup(string name, string value)
         //{
-        //    _db = new upprbDbEntities();
+        //    _db = new vtlDbEntities();
         //    int _effectRow = 0;
         //    var _deptRow = _db.MasterLookups.Where(x => x.Name.Equals(name)).FirstOrDefault();
         //    if (_deptRow == null)
@@ -770,7 +770,7 @@ namespace VTL_Web.BAL.Masters
 
         //public Enums.CrudStatus EditMasterLookup(string name, string value, int deptId)
         //{
-        //    _db = new upprbDbEntities();
+        //    _db = new vtlDbEntities();
         //    int _effectRow = 0;
         //    var _deptRow = _db.MasterLookups.Where(x => x.Id.Equals(deptId)).FirstOrDefault();
         //    if (_deptRow != null)
@@ -786,7 +786,7 @@ namespace VTL_Web.BAL.Masters
         //}
         //public Enums.CrudStatus DeleteMasterLookup(int deptId)
         //{
-        //    _db = new upprbDbEntities();
+        //    _db = new vtlDbEntities();
         //    int _effectRow = 0;
         //    var _deptRow = _db.MasterLookups.Where(x => x.Id.Equals(deptId)).FirstOrDefault();
         //    if (_deptRow != null)

@@ -11,12 +11,12 @@ namespace VTL_Web.BAL.Commom
 {
     public class CommonDetails
     {
-        upprbDbEntities _db = null;
+        vtlDbEntities _db = null;
         private string[] Months = new string[] { "January", "Febuary", "March", "April", "May", "June", "July", "August", "Sepetember", "October", "November", "December" };
 
         public List<DayModel> DaysList()
         {
-            //_db = new upprbDbEntities();
+            //_db = new vtlDbEntities();
             //var _list = (from day in _db.DayMasters
             //             select new DayModel
             //             {
@@ -29,7 +29,7 @@ namespace VTL_Web.BAL.Commom
 
         public List<PatientModel> PatientSearch(string _searchValue)
         {
-            //_db = new upprbDbEntities();
+            //_db = new vtlDbEntities();
             //return _db.PatientInfoes.Where(x => x.CRNumber.Contains(_searchValue) || x.RegistrationNumber.Contains(_searchValue) || x.MobileNumber.Contains(_searchValue) || x.LastName.Contains(_searchValue) || x.FirstName.Contains(_searchValue) || x.Email.Contains(_searchValue))
             //                        .Select(x => new PatientModel { PatientId = x.PatientId, PatientName = x.FirstName + " " + x.LastName }).ToList();
             return null;

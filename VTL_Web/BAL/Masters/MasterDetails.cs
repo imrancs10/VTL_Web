@@ -8,10 +8,10 @@ namespace VTL_Web.BAL.Masters
 {
     public class MasterDetails
     {
-        upprbDbEntities _db = null;
+        vtlDbEntities _db = null;
         public IEnumerable<object> GetLookupDetail(int? parentLookupId, string lookupTye)
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             return (from lookup in _db.Lookups.Where(x => (x.ParentLookupId == parentLookupId) && x.LookupType == lookupTye && x.IsActive == true)
                     select new
                     {
@@ -24,7 +24,7 @@ namespace VTL_Web.BAL.Masters
         }
         public IEnumerable<object> GetStateDetail()
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             return (from lookup in _db.StateMasters
                     select new
                     {
@@ -36,7 +36,7 @@ namespace VTL_Web.BAL.Masters
 
         public IEnumerable<object> GetZoneDetail(int stateId)
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             return (from lookup in _db.ZoneMasters
                     where lookup.StateId == stateId
                     select new
@@ -50,7 +50,7 @@ namespace VTL_Web.BAL.Masters
 
         public IEnumerable<object> GetPACDetailByPSId(int psId)
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             return (from lookup in _db.PACEntries
                     where lookup.PS_Id == psId
                     select new
@@ -62,7 +62,7 @@ namespace VTL_Web.BAL.Masters
         }
         public IEnumerable<object> GetPromotionSubject()
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             return (from lookup in _db.PromotionDetails
                     select new
                     {
@@ -74,7 +74,7 @@ namespace VTL_Web.BAL.Masters
         }
         public IEnumerable<object> GetDirectRecruitementSubject()
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             return (from lookup in _db.DirectRecruitementDetails
                     select new
                     {
@@ -86,7 +86,7 @@ namespace VTL_Web.BAL.Masters
         }
         public IEnumerable<object> GetRangeDetail(int zoneId)
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             return (from lookup in _db.RangeMasters
                     where lookup.ZoneId == zoneId
                     select new
@@ -100,7 +100,7 @@ namespace VTL_Web.BAL.Masters
 
         public IEnumerable<object> GetDistrictDetail(int rangeId)
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             return (from lookup in _db.DistrictMasters
                     where rangeId == 0 || lookup.RangeId == rangeId
                     select new
@@ -112,7 +112,7 @@ namespace VTL_Web.BAL.Masters
         }
         public IEnumerable<object> GetPoliceStationDetail(int districtId)
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             return (from lookup in _db.PSMasters
                     where lookup.DistrictId == districtId
                     select new

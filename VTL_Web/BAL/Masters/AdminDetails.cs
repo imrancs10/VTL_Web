@@ -12,10 +12,10 @@ namespace VTL_Web.BAL.Masters
 {
     public class AdminDetails
     {
-        upprbDbEntities _db = null;
+        vtlDbEntities _db = null;
         public Enums.CrudStatus SavePopularRecruitment(PopularRecruitment recruitment)
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             int _effectRow = 0;
             if (recruitment.Id == 0)
                 _db.Entry(recruitment).State = EntityState.Added;
@@ -41,7 +41,7 @@ namespace VTL_Web.BAL.Masters
         }
         public Enums.CrudStatus SaveNotice(Notice notice)
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             int _effectRow = 0;
             if (notice.Id == 0)
                 _db.Entry(notice).State = EntityState.Added;
@@ -68,7 +68,7 @@ namespace VTL_Web.BAL.Masters
         }
         public Enums.CrudStatus SavePACEntry(PACEntry notice)
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             int _effectRow = 0;
             if (notice.Id == 0)
             {
@@ -121,7 +121,7 @@ namespace VTL_Web.BAL.Masters
 
         public bool IsDuplicateFIR(PACEntry pac)
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             var _list = (from en in _db.PACEntries
                          where en.FIRNo == pac.FIRNo && en.District_Id == pac.District_Id
                          && en.PS_Id == pac.PS_Id && en.ExamineCenterName == pac.ExamineCenterName
@@ -135,7 +135,7 @@ namespace VTL_Web.BAL.Masters
         }
         public Enums.CrudStatus SavePromotionEntry(PromotionDetail notice)
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             int _effectRow = 0;
             if (notice.Id == 0)
                 _db.Entry(notice).State = EntityState.Added;
@@ -162,7 +162,7 @@ namespace VTL_Web.BAL.Masters
         }
         public Enums.CrudStatus SaveDirectRecruitementEntry(DirectRecruitementDetail notice)
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             int _effectRow = 0;
             if (notice.Id == 0)
                 _db.Entry(notice).State = EntityState.Added;
@@ -190,7 +190,7 @@ namespace VTL_Web.BAL.Masters
 
         public Enums.CrudStatus ChangePassword(string oldPassword, string newPassword, string confirmPassword)
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             int _effectRow = 0;
             var userId = UserData.UserId;
             if (!string.IsNullOrEmpty(oldPassword) && !string.IsNullOrEmpty(newPassword) && !string.IsNullOrEmpty(confirmPassword))
@@ -209,7 +209,7 @@ namespace VTL_Web.BAL.Masters
 
         public Enums.CrudStatus SavePSEntry(PSMaster notice)
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             int _effectRow = 0;
             if (notice.PSId == 0)
                 _db.Entry(notice).State = EntityState.Added;
@@ -231,7 +231,7 @@ namespace VTL_Web.BAL.Masters
 
         public List<PSEntryModel> GetPSEntry()
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             var _list = (from lookEntry in _db.PSMasters
                          join dis in _db.DistrictMasters on lookEntry.DistrictId equals dis.DistrictId
                          select new PSEntryModel
@@ -245,7 +245,7 @@ namespace VTL_Web.BAL.Masters
         }
         public List<MedalEntryModel> GetMedalEntry()
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             var _list = (from lookEntry in _db.MedalDetails
                          join dis in _db.Lookups on lookEntry.MedalCategoryId equals dis.LookupId
                          select new MedalEntryModel
@@ -265,7 +265,7 @@ namespace VTL_Web.BAL.Masters
         }
         public List<AdminUserModel> GetAdminUser()
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             var _list = (from lookEntry in _db.AdminUsers
                          join dis in _db.Roles on lookEntry.RoleId equals dis.RoleId
                          select new AdminUserModel
@@ -283,7 +283,7 @@ namespace VTL_Web.BAL.Masters
         }
         public Enums.CrudStatus DeletePSEntry(int Id)
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             int _effectRow = 0;
             var _deptRow = _db.PSMasters.Where(x => x.PSId.Equals(Id)).FirstOrDefault();
             if (_deptRow != null)
@@ -298,7 +298,7 @@ namespace VTL_Web.BAL.Masters
         }
         public Enums.CrudStatus DeleteMedalDetailEntry(int Id)
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             int _effectRow = 0;
             var _deptRow = _db.MedalDetails.Where(x => x.Id.Equals(Id)).FirstOrDefault();
             if (_deptRow != null)
@@ -314,7 +314,7 @@ namespace VTL_Web.BAL.Masters
 
         public Enums.CrudStatus DeleteUserDetailEntry(int Id)
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             int _effectRow = 0;
             var _deptRow = _db.AdminUsers.Where(x => x.Id.Equals(Id)).FirstOrDefault();
             if (_deptRow != null)
@@ -329,7 +329,7 @@ namespace VTL_Web.BAL.Masters
         }
         public Enums.CrudStatus SaveMedalEntry(MedalDetail notice)
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             int _effectRow = 0;
             if (notice.Id == 0)
             {
@@ -357,7 +357,7 @@ namespace VTL_Web.BAL.Masters
         }
         public Enums.CrudStatus SaveNewUserEntry(AdminUser notice)
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             int _effectRow = 0;
             if (notice.Id == 0)
             {
@@ -384,7 +384,7 @@ namespace VTL_Web.BAL.Masters
         }
         public Enums.CrudStatus DeleteEventCalender(int Id)
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             int _effectRow = 0;
             var _deptRow = _db.EventCalenders.Where(x => x.Id.Equals(Id)).FirstOrDefault();
             if (_deptRow != null)
@@ -399,7 +399,7 @@ namespace VTL_Web.BAL.Masters
         }
         public Enums.CrudStatus SaveEventCalender(EventCalender notice)
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             int _effectRow = 0;
             if (notice.Id == 0)
             {
@@ -425,7 +425,7 @@ namespace VTL_Web.BAL.Masters
         }
         public List<EventCalenderModel> GetEventCalender()
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             var _list = (from lookEntry in _db.EventCalenders
                          where lookEntry.EventDate != null
                          select new EventCalenderModel
@@ -442,7 +442,7 @@ namespace VTL_Web.BAL.Masters
         }
         public Enums.CrudStatus SaveFAQEntry(FAQDetail notice)
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             int _effectRow = 0;
             if (notice.Id == 0)
                 _db.Entry(notice).State = EntityState.Added;
@@ -464,7 +464,7 @@ namespace VTL_Web.BAL.Masters
 
         public List<FAQEntryModel> GetFAQEntry()
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             var _list = (from lookEntry in _db.FAQDetails
                          where lookEntry.IsActive == true
                          select new FAQEntryModel
@@ -479,7 +479,7 @@ namespace VTL_Web.BAL.Masters
         }
         public Enums.CrudStatus DeleteFAQEntry(int Id)
         {
-            _db = new upprbDbEntities();
+            _db = new vtlDbEntities();
             int _effectRow = 0;
             var _deptRow = _db.FAQDetails.Where(x => x.Id.Equals(Id)).FirstOrDefault();
             if (_deptRow != null)
@@ -495,7 +495,7 @@ namespace VTL_Web.BAL.Masters
         }
         //public Enums.CrudStatus EditDept(string deptName, int deptId, string deptUrl,string  deptDesc)
         //{
-        //    _db = new upprbDbEntities();
+        //    _db = new vtlDbEntities();
         //    int _effectRow = 0;
         //    var _deptRow = _db.Departments.Where(x => x.DepartmentID.Equals(deptId)).FirstOrDefault();
         //    if (_deptRow != null)
@@ -512,7 +512,7 @@ namespace VTL_Web.BAL.Masters
         //}
         //public Enums.CrudStatus UpdateDeptImage(byte[] image, int deptId)
         //{
-        //    _db = new upprbDbEntities();
+        //    _db = new vtlDbEntities();
         //    int _effectRow = 0;
         //    var _deptRow = _db.Departments.Where(x => x.DepartmentID.Equals(deptId)).FirstOrDefault();
         //    if (_deptRow != null)
@@ -527,7 +527,7 @@ namespace VTL_Web.BAL.Masters
         //}
         //public Enums.CrudStatus DeleteDept(int deptId)
         //{
-        //    _db = new upprbDbEntities();
+        //    _db = new vtlDbEntities();
         //    int _effectRow = 0;
         //    var _deptRow = _db.Departments.Where(x => x.DepartmentID.Equals(deptId)).FirstOrDefault();
         //    if (_deptRow != null)
@@ -543,7 +543,7 @@ namespace VTL_Web.BAL.Masters
 
         //public List<DepartmentModel> DepartmentList()
         //{
-        //    _db = new upprbDbEntities();
+        //    _db = new vtlDbEntities();
         //    var _list = (from dept in _db.Departments
         //                 select new DepartmentModel
         //                 {
@@ -558,7 +558,7 @@ namespace VTL_Web.BAL.Masters
         //}
         //public List<MasterLookupModel> GetMastersData()
         //{
-        //    _db = new upprbDbEntities();
+        //    _db = new vtlDbEntities();
         //    var _list = (from dept in _db.MasterLookups
         //                 select new MasterLookupModel
         //                 {
@@ -571,7 +571,7 @@ namespace VTL_Web.BAL.Masters
 
         //public DepartmentModel GetDeparmentById(int deptId)
         //{
-        //    _db = new upprbDbEntities();
+        //    _db = new vtlDbEntities();
         //    int _effectRow = 0;
         //    var _deptRow = _db.Departments.Where(x => x.DepartmentID.Equals(deptId)).FirstOrDefault();
         //    if (_deptRow != null)
@@ -591,7 +591,7 @@ namespace VTL_Web.BAL.Masters
 
         //public Enums.CrudStatus SaveMasterLookup(string name, string value)
         //{
-        //    _db = new upprbDbEntities();
+        //    _db = new vtlDbEntities();
         //    int _effectRow = 0;
         //    var _deptRow = _db.MasterLookups.Where(x => x.Name.Equals(name)).FirstOrDefault();
         //    if (_deptRow == null)
@@ -609,7 +609,7 @@ namespace VTL_Web.BAL.Masters
 
         //public Enums.CrudStatus EditMasterLookup(string name, string value, int deptId)
         //{
-        //    _db = new upprbDbEntities();
+        //    _db = new vtlDbEntities();
         //    int _effectRow = 0;
         //    var _deptRow = _db.MasterLookups.Where(x => x.Id.Equals(deptId)).FirstOrDefault();
         //    if (_deptRow != null)
@@ -625,7 +625,7 @@ namespace VTL_Web.BAL.Masters
         //}
         //public Enums.CrudStatus DeleteMasterLookup(int deptId)
         //{
-        //    _db = new upprbDbEntities();
+        //    _db = new vtlDbEntities();
         //    int _effectRow = 0;
         //    var _deptRow = _db.MasterLookups.Where(x => x.Id.Equals(deptId)).FirstOrDefault();
         //    if (_deptRow != null)
