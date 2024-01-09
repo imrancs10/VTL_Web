@@ -628,6 +628,12 @@
     <Content Include="VTL_DOC\NABL-Certificate-TC-6681.pdf-2022.pdf" />
     <Content Include="VTL_DOC\NABL-Scope-TC-6681-2022.pdf" />
     <Content Include="VTL_DOC\Scope-CC-2417-2022%28Calibration%29.pdf" />
+    <Content Include="Views\Home\Services.cshtml" />
+    <Content Include="Views\Home\CoarseAggregate.cshtml" />
+    <Content Include="Views\Home\SoilTesting.cshtml" />
+    <Content Include="Views\Home\Accreditation.cshtml" />
+    <Content Include="Views\Home\MajorClients.cshtml" />
+    <Content Include="Views\Home\PartyList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

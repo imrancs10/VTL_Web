@@ -53,6 +53,42 @@ namespace VTL_Web.Controllers
         {
             return View();
         }
+
+        public ActionResult Services()
+        {
+            return View();
+        }
+
+        public ActionResult CoarseAggregate()
+        {
+            return View();
+        }
+
+        public ActionResult SoilTesting()
+        {
+            return View();
+        }
+
+        public ActionResult Accreditation()
+        {
+            return View();
+        }
+
+        public ActionResult MajorClients()
+        {
+            return View();
+        }
+
+        public ActionResult PartyList()
+        {
+            return View();
+        }
+
+        public ActionResult Contact()
+        {
+            return View();
+        }
+
         public ActionResult Notice(int? noticeId = null, int? categoryId = null)
         {
             var detail = new GeneralDetails();
@@ -223,10 +259,6 @@ namespace VTL_Web.Controllers
             return View();
         }
         public ActionResult Disclaimer()
-        {
-            return View();
-        }
-        public ActionResult Contact()
         {
             return View();
         }

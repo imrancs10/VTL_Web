@@ -4,47 +4,140 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<section class="hero-slider">
-    <div class="pr-15 pl-15">
+<section class="testimonials">
+    <div class="container">
         <div class="row">
-           
-            @Html.Partial("_Contact_SideMenu")
-            <div class="col-lg-9 w_content pt-20 mt-0">
-                <h2 class="w-bgph "> Contact</h2>
-                <hr>
-                <div class="clr"></div>
-                <h4 style="text-align: center">उत्तर प्रदेश पुलिस सेवा भर्ती एवं प्रोन्नति बोर्ड</h4>
-                <h4 style="text-align: center">Uttar Pradesh Police Recruitment & Promotion Board</h4>
-                <div class="clr"></div>
-                <p style="text-align: center; width: 100%; font-size:18px;  line-height:35px;">
-
-                    <b>Phone:</b> 0522-2235752<br>
-                    <b>Fax:</b> 0522-2235806<br>
-                    <b>सी० यू० जी०</b> 9454404786
-
-                    <b>Email:</b> sampark@uppbpb.gov.in<br>
-
-                </p>
-                <hr>
-
+            <div class="col-sm-12 col-md-9 col-lg-9" data-aos="zoom-in-down" data-aos-duration="1500">
             </div>
-
-            <div class="clearfix"></div>
         </div>
     </div>
 </section>
+<section class="inner-banner pb-5 pt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7 padding0">
+                <h1 class="text-blue custom-hd">
+                    Contact us
+                    <div class="clearfix"></div>
+                    <img src="~/Content/image/logo/div.png" alt="Contact us">
+                </h1>
+            </div>
+            <div class="col-md-5 page-menu">
+                <ul class="breadcrumb">
+                    <li><a href="index.html">Home</a></li>
+                    <li>/</li>
+                    <li class="act"><a>Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row pb-3">
+            <div class="col-md-6 col-lg-6 col-sm-6 part1 pt-5">
+                <div class="container pt-2">
+                    <h4>Address</h4>
+                    <div class="row pb-5">
+                        <div class="col-2 col-sm-1 col-md-1 text-center">
+                            <i class="fa fa-map-marker" aria-hidden="true" style="font-size: 35px;"></i>
+                        </div>
+                        <div class="col-10 col-sm-11 col-md-11">
+                            <div class="text-part-mnl">
+                                No-210, Gudamba Arjun Enclave, Lucknow, Uttar Pradesh, India, 226021
+                            </div>
+                        </div>
+                    </div>
+                    <h4>Email</h4>
+                    <div class="row pb-5">
+                        <div class="col-2 col-sm-1 col-md-1 text-center">
+                            <i class="fa fa-envelope-open-o" aria-hidden="true" style="font-size: 30px;"></i>
+                        </div>
 
-<script>
+                        <div class="col-10 col-sm-11 col-md-11 text-part-mnl">
+                            kmp@vtlspectro.com, care@vtlspectro.com
+                        </div>
+                    </div>
 
-    $("#nav-btn").click(function () {
-        $("nav1").toggle("slow");
-    });
+                    <h4>Phone</h4>
+                    <div class="row pb-5">
+                        <div class="col-2 col-sm-1 col-md-1 text-center">
+                            <i class="fa fa-mobile" aria-hidden="true" style="font-size: 35px;"></i>
+                        </div>
 
+                        <div class=" col-10 col-sm-11 col-md-11 text-part-mnl">
+                            <div class="">+91 8423334316, 8423334317</div>
 
-</script>
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('.navbar-nav').find('li').removeClass('active');
-        $('a[href="/Home/Contact"]').parent().addClass('active')
-    });
-</script>
+                        </div>
+                    </div>
+                    <div class="pb-5">
+                        <h4>Social media</h4>
+
+                        <div class="text-part-mnl pb-5">
+                            <ul class="list list-inline contact-social">
+                                <li><a href="#"><i class="fa fa-facebook mt-3"></i></a></li>
+                                <li><a href="#"><i class="fa fa-instagram mt-3 mr-3 ml-3"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter mt-3"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-sm-6 part2 pt-4 pr-4 pl-5 pb-4">
+                <h3>Send us a message</h3>
+                <form method="POST" id="contact_form" name="contact_form" class="relative">
+                    <div class="scrapcar-contact-form">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-lg-6">
+                                <label class="title">Name </label><span class="text-red">*</span>
+                                <input type="text" name="username" required="">
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-lg-6">
+                                <label class="title">Email <span class="text-red">*</span></label>
+                                <input type="email" name="email" required="">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-lg-6">
+                                <label class="title">Phone<span class="text-red">* </span></label>
+                                <input type="text" class="uphone" minlength="10" maxlength="10" required="" name="phone">
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-lg-6">
+                                <label class="title">Address</label>
+                                <input type="text" name="address">
+                            </div>
+                        </div>
+                        <div class="pt-2 pb-2"></div>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <label class="title">Message</label>
+                                <textarea value="Type Your Message" name="message"></textarea>
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-12 full pb-3 pt-2">
+                                <div class="g-recaptcha" data-sitekey="6Lfl6XIUAAAAAAyVpNzEgk_1TZnt8k5Ks6oC5uMk"><div style="width: 304px; height: 78px;"><div><iframe src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6Lfl6XIUAAAAAAyVpNzEgk_1TZnt8k5Ks6oC5uMk&amp;co=aHR0cDovL3d3dy5zaWdtYXRlc3Qub3JnOjgw&amp;hl=en&amp;v=v1554100419869&amp;size=normal&amp;cb=na0jjrauk1pd" width="304" height="78" role="presentation" name="a-qhdwv1ho8hp2" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div></div>
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <button type="submit" class="btn  btn-round">Send Now <i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="section-map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3557.221044481334!2d80.9753831746872!3d26.928206059425847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399957a68286345f%3A0xf55e4694b3136dc5!2sArjun%20Enclave%20Phase%20II%2C%20Gudamba!5e0!3m2!1sen!2sin!4v1704607992072!5m2!1sen!2sin" width="100%" height="480" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3511.410965917819!2d77.31850856567415!3d28.34642233253154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cdb8fd8ebe247%3A0xa2039d86a2ab1d65!2sChawla%20Colony%2C%20Sector%204%2C%20Ballabhgarh%2C%20Faridabad%2C%20Haryana%20121004!5e0!3m2!1sen!2sin!4v1598609126904!5m2!1sen!2sin" width="100%" height="480" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe> -->
+</section>
+<section class="testimonials">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-9 col-lg-9" data-aos="zoom-in-down" data-aos-duration="1500">
+                <h2>Want to speak to our Customer Care Executive?</h2>
+                <p>Just Submit Your Contact Details and We’ll be get in Touch With You Shortly.</p>
+            </div>
+            <div class="col-sm-12 col-md-3 col-lg-3 text-center pt-4" data-aos="zoom-in-down" data-aos-duration="1500">
+                <a class="btn btn-enguiry open-popup" href="#">Send an Enquiry <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
