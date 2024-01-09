@@ -1,0 +1,25 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+config
+Debug
+bin
+/.vs/
+/.vs/UPPRB_Web/v15/Server/sqlite3
+/UPPRB_Web/bin/DataLayer.dll.config
+*.CopyComplete
+/.vs/UPPRB_Web/DesignTimeBuild/.dtbcache
+packages/*
+/UPPRB_Web/Properties/PublishProfiles
+/UPPRB_Web/obj/Release/TransformWebConfig
+/UPPRB_Web/obj/Release/TempPE
+/.vs/UPPRB_Web/
+/DataLayer/obj/Release/edmxResourcesToEmbed
+/DataLayer/obj/Release
+/UPPRB_Web/obj/Release
+*.user
+/UPPRB_Web/LabReports
+/UPPRB_Web/Reports/Bill/2018/October/23487238974.pdf
+/UPPRB_Web/Reports/Bill/2018/November
+/UPPRB_Web/Reports
