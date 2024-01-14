@@ -39,18 +39,18 @@ namespace VTL_Web.Infrastructure.Utility
         {
             get { return base.User as CustomPrincipal; }
         }
-        public virtual List<NoticeModel> GetEntryTypeDetail()
-        {
-            GeneralDetails _details = new GeneralDetails();
-            return _details.GetEntryType();
-        }
+        //public virtual List<NoticeModel> GetEntryTypeDetail()
+        //{
+        //    GeneralDetails _details = new GeneralDetails();
+        //    return _details.GetEntryType();
+        //}
 
-        public virtual List<string> GetUserPermission()
-        {
-            int roleId = (int)User.RoleId;
-            GeneralDetails _details = new GeneralDetails();
-            return _details.GetUserPermission(roleId);
-        }
+        //public virtual List<string> GetUserPermission()
+        //{
+        //    int roleId = (int)User.RoleId;
+        //    GeneralDetails _details = new GeneralDetails();
+        //    return _details.GetUserPermission(roleId);
+        //}
 
         public virtual bool GetCaptchEnable()
         {

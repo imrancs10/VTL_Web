@@ -24,17 +24,17 @@ namespace VTL_Web.Infrastructure.Authentication
             //redirectTargetDictionary.Add("customMessage", message);
             //filterContext.Result = new RedirectToRouteResult(redirectTargetDictionary);
             LoginDetails _details = new LoginDetails();
-            var islogin = _details.ValidateLoginDetail();
-            if (islogin == null || !islogin.Value)
-            {
-                _details.UpdateLoginDetail();
-                FormsAuthentication.SignOut();
-                RouteValueDictionary redirectTargetDictionary = new RouteValueDictionary();
-                redirectTargetDictionary.Add("area", "");
-                redirectTargetDictionary.Add("action", "Index");
-                redirectTargetDictionary.Add("controller", "Login");
-                filterContext.Result = new RedirectToRouteResult(redirectTargetDictionary);
-            }
+            //var islogin = _details.ValidateLoginDetail();
+            //if (islogin == null || !islogin.Value)
+            //{
+            //    //_details.UpdateLoginDetail();
+            //    FormsAuthentication.SignOut();
+            //    RouteValueDictionary redirectTargetDictionary = new RouteValueDictionary();
+            //    redirectTargetDictionary.Add("area", "");
+            //    redirectTargetDictionary.Add("action", "Index");
+            //    redirectTargetDictionary.Add("controller", "Login");
+            //    filterContext.Result = new RedirectToRouteResult(redirectTargetDictionary);
+            //}
         }
     }
 }

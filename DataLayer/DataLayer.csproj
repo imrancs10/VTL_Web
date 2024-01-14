@@ -71,73 +71,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DbEntity.edmx</DependentUpon>
     </Compile>
-    <Compile Include="DirectRecruitementDetail.cs">
-      <DependentUpon>DbEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DistrictMaster.cs">
-      <DependentUpon>DbEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Enquiry.cs">
-      <DependentUpon>DbEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EventCalender.cs">
-      <DependentUpon>DbEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="FAQDetail.cs">
-      <DependentUpon>DbEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Feedback.cs">
-      <DependentUpon>DbEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="LoginDetail.cs">
-      <DependentUpon>DbEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Lookup.cs">
-      <DependentUpon>DbEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="MedalDetail.cs">
-      <DependentUpon>DbEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Notice.cs">
-      <DependentUpon>DbEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PACEntry.cs">
-      <DependentUpon>DbEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PACUser.cs">
-      <DependentUpon>DbEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Permission.cs">
-      <DependentUpon>DbEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PopularRecruitment.cs">
-      <DependentUpon>DbEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PromotionDetail.cs">
-      <DependentUpon>DbEntity.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PSMaster.cs">
-      <DependentUpon>DbEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="RangeMaster.cs">
-      <DependentUpon>DbEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Role.cs">
-      <DependentUpon>DbEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="StateMaster.cs">
-      <DependentUpon>DbEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="UserRole.cs">
-      <DependentUpon>DbEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Visitor_Detail.cs">
-      <DependentUpon>DbEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ZoneMaster.cs">
-      <DependentUpon>DbEntity.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
