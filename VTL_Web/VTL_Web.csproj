@@ -3865,6 +3865,8 @@
     <Content Include="Content\images\a.png" />
     <Content Include="Content\images\tbs-favicon.html" />
     <Content Include="Content\image\1.jpg" />
+    <Content Include="Content\image\2.jpg" />
+    <Content Include="Content\image\3.png" />
     <Content Include="Content\image\Accreditation\CERTIFICATE OF INCORPORATION_page-0001.jpg" />
     <Content Include="Content\image\Accreditation\Certificate TC-12520_page-0001.jpg" />
     <Content Include="Content\image\Accreditation\Certificate_TC-6681.jpg" />
@@ -3880,16 +3882,12 @@
     <Content Include="Content\image\Approvals\h.jpg" />
     <Content Include="Content\image\Approvals\i.jpg" />
     <Content Include="Content\image\banner\Brick-Banner.jpg" />
-    <Content Include="Content\image\banner\BrickBanner.jpg" />
     <Content Include="Content\image\banner\Building-Material-Banner.jpg" />
     <Content Include="Content\image\banner\BuildingMaterialBanner.jpg" />
     <Content Include="Content\image\banner\Calibration-Banner.jpg" />
-    <Content Include="Content\image\banner\CalibrationBanner.jpg" />
     <Content Include="Content\image\banner\coarse-aggregate-Banner.jpg" />
-    <Content Include="Content\image\banner\coarseaggregateBanner.jpg" />
     <Content Include="Content\image\banner\hero_2.jpg" />
     <Content Include="Content\image\banner\water-testing-banner.jpg" />
-    <Content Include="Content\image\banner\watertestingbanner.jpg" />
     <Content Include="Content\image\banner\Whatwedobg.jpg" />
     <Content Include="Content\image\bitumen-testing.jpg" />
     <Content Include="Content\image\Calibration-Certificate.jpg" />
@@ -3917,7 +3915,6 @@
     <Content Include="Content\image\clients\o1.jpg" />
     <Content Include="Content\image\clients\pcl.jpg" />
     <Content Include="Content\image\clients\pg.jpg" />
-    <Content Include="Content\image\clients\rites.jpg" />
     <Content Include="Content\image\clients\tg.jpg" />
     <Content Include="Content\image\coarse-aggregates.png" />
     <Content Include="Content\image\favicon.ico" />
@@ -3973,9 +3970,10 @@
     <Content Include="Content\image\Services-Image\Soil-Testing.jpg" />
     <Content Include="Content\image\Services-Image\Water-Testing.jpg" />
     <Content Include="Content\image\soil-testing.png" />
-    <Content Include="Content\image\ssslogo.png" />
     <Content Include="Content\image\testimoinials.jpg" />
+    <Content Include="Content\image\tttt.jpg" />
     <Content Include="Content\image\Turning-Mment-Survey.png" />
+    <Content Include="Content\image\undraw_dev_productivity_umsq 1 .svg" />
     <Content Include="Content\image\VANMADHURYAM TESTING logo.png" />
     <Content Include="Content\image\water_testing.png" />
     <Content Include="Content\js\aos.js" />
@@ -3990,8 +3988,10 @@
     <Content Include="images\loading.gif" />
     <Content Include="images\next.png" />
     <Content Include="images\prev.png" />
-    <Content Include="Properties\PublishProfiles\FolderProfile.pubxml.user" />
     <Content Include="logs\test.log" />
+    <Content Include="Views\UC\index.html" />
+    <Content Include="Views\UC\style1.css" />
+    <Content Include="Views\UC\undraw_dev_productivity_umsq 1 .svg" />
     <Content Include="webfonts\fa-brands-400.svg" />
     <Content Include="webfonts\fa-regular-400.svg" />
     <Content Include="webfonts\fa-solid-900.svg" />
@@ -4257,7 +4257,6 @@
     <Content Include="Content\admincss\vendor\tinymce\skins\lightgray\fonts\tinymce.eot" />
     <Content Include="Content\admincss\vendor\tinymce\skins\lightgray\fonts\tinymce.ttf" />
     <Content Include="Content\admincss\vendor\tinymce\skins\lightgray\fonts\tinymce.woff" />
-    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -4402,6 +4401,7 @@
     <Folder Include="FilesUploaded\" />
     <Folder Include="Infrastructure\Adapter\WebService\" />
     <Folder Include="LabReports\" />
+    <Folder Include="Properties\PublishProfiles\" />
     <Folder Include="Resource\" />
   </ItemGroup>
   <ItemGroup>
