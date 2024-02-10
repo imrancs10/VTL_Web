@@ -3990,9 +3990,6 @@
     <Content Include="images\next.png" />
     <Content Include="images\prev.png" />
     <Content Include="logs\test.log" />
-    <Content Include="Views\UC\index.html" />
-    <Content Include="Views\UC\style1.css" />
-    <Content Include="Views\UC\undraw_dev_productivity_umsq 1 .svg" />
     <Content Include="webfonts\fa-brands-400.svg" />
     <Content Include="webfonts\fa-regular-400.svg" />
     <Content Include="webfonts\fa-solid-900.svg" />
