@@ -89,6 +89,12 @@ namespace VTL_Web.Controllers
             return View();
         }
 
+        public ActionResult UnderConstruction()
+        {
+            return View();
+        }
+
+
         //public ActionResult Notice(int? noticeId = null, int? categoryId = null)
         //{
         //    var detail = new GeneralDetails();

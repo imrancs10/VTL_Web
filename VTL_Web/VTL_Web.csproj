@@ -3849,6 +3849,7 @@
     <Content Include="Content\css\owl.video.play.html" />
     <Content Include="Content\css\slick.css" />
     <Content Include="Content\css\style.css" />
+    <Content Include="Content\css\style1.css" />
     <Content Include="Content\fonts\flaticon\backup.txt" />
     <Content Include="Content\fonts\flaticon\font\flaticon.css" />
     <Content Include="Content\fonts\flaticon\font\flaticon.html" />
@@ -4391,6 +4392,7 @@
     <Content Include="Views\Home\Accreditation.cshtml" />
     <Content Include="Views\Home\MajorClients.cshtml" />
     <Content Include="Views\Home\PartyList.cshtml" />
+    <Content Include="Views\Home\UnderConstruction.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
